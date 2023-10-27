@@ -1,0 +1,3 @@
+%TEMP%
+C:\Windows\TEMP
+C:\Windows\Prefetch
