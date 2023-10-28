@@ -55,15 +55,19 @@ function Remove-EverythingInFolder {
 
 }
 
+
+# This is the body of the script. It reads the list of folders and uses a method to try to empty each one. 
+
 Write-Verbose -Message "Reading the list of folders to empty into a array."
 $Folders_To_Empty = Get-Content "Folders_To_Empty.txt" | Where-Object { $_.Trim() -ne '' }
 
 Write-Verbose -Message "Trying to empty each folder in the array."
 foreach ($Folder in $Folders_To_Empty) {
     
+    Write-Verbose -Message "If the path has any environment variables, convert them to their full path values."
+    $Folder = Convert-EnvironmentVariablesInPath($Folder)
+
+    Write-Verbose -Message "Call a helper function to empty the folder if it exists."
     Remove-EverythingInFolder $Folder
 
 }
-
-Write-Verbose -Message "Trying to empty user's temporary folder."
-Remove-EverythingInFolder $Env:TEMP
