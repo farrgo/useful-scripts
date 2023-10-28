@@ -58,6 +58,9 @@ function Remove-EverythingInFolder {
 
 # This is the body of the script. It reads the list of folders and uses a method to try to empty each one. 
 
+Write-Verbose - Message "Importing a helper module to convert environment variables to full path values."
+. "$PSScriptRoot\convert_environment_variables_in_path.ps1"
+
 Write-Verbose -Message "Reading the list of folders to empty into a array."
 $Folders_To_Empty = Get-Content "Folders_To_Empty.txt" | Where-Object { $_.Trim() -ne '' }
 
