@@ -5,7 +5,7 @@ You can add or adjust it by putting each folder on its own line. Environment var
 
 # Installation
 1. Download all files in this folder.
-2. If you would like to run the utility via double-click, you will need to replace the path to it and its folder in the shortcut file, then click OK.
+2. If you would like to run the utility via double-click, you will need to replace the path to it and its folder in the shortcut file, then click OK. The shortcut can be placed anywhere on your computer and will still work.
 
 ![Updating the shortcut's paths](./Shortcut.png "Updating the shorcut")
 
